@@ -39,3 +39,20 @@ body {
   color: $slate-900;
   background-color: $slate-100;
 }
+
+.container {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 688px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1008px;
+  }
+}

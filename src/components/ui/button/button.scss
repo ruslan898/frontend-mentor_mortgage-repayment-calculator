@@ -1,0 +1,17 @@
+@use '/src/sass/variables.scss' as *;
+@use '/src/sass/mixins.scss' as *;
+
+.btn {
+  max-width: 314px;
+  color: $slate-900;
+  @include text-preset-3;
+  padding: 16px;
+  background-color: $lime;
+  border: none;
+  border-radius: 999px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  cursor: pointer;
+}
