@@ -1,2 +1,19 @@
 @use '/src/sass/variables.scss' as *;
 @use '/src/sass/mixins.scss' as *;
+
+.app {
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .app {
+    border-radius: 16px;
+  }
+}
+@media (min-width: 1024px) {
+  .app {
+    grid-template-columns: 1fr 1fr;
+  }
+}

@@ -39,13 +39,16 @@ body {
   color: $slate-900;
   background-color: $slate-100;
 }
-
 .container {
   max-width: 100%;
   margin: 0 auto;
 }
 
 @media (min-width: 768px) {
+  body {
+    padding: 40px;
+  }
+
   .container {
     max-width: 688px;
   }

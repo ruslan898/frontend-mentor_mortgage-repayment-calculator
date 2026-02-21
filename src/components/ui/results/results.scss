@@ -1,0 +1,98 @@
+@use '/src/sass/variables.scss' as *;
+@use '/src/sass/mixins.scss' as *;
+
+.results {
+  background-color: $white;
+
+  &-wrapper {
+    height: 100%;
+    padding: 32px 24px;
+    color: $slate-300;
+    background-color: $slate-900;
+    @include text-preset-4;
+    display: flex;
+    flex-direction: column;
+
+    .empty-placeholder {
+      margin: auto;
+    }
+  }
+
+  &-values {
+    background-color: $lime;
+    border-radius: 8px;
+
+    &-wrapper {
+      padding: 24px 16px;
+      @include text-preset-4;
+      background: #0e2431;
+      transform: translateY(3px);
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+
+      .divider {
+        height: 1px;
+        background: #9abed540;
+      }
+    }
+
+    &-item {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    &-title {
+      @include text-preset-4;
+    }
+
+    &-value {
+      color: $white;
+      @include text-preset-2;
+
+      &.big {
+        color: $lime;
+        font-size: 40px;
+      }
+    }
+  }
+
+  &-title {
+    color: $white;
+  }
+
+  &-text {
+    margin: 16px 0 40px 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .results {
+    &-wrapper {
+      padding: 40px;
+    }
+
+    &-values {
+      &-wrapper {
+        padding: 40px;
+        gap: 32px;
+      }
+
+      &-value {
+        &.big {
+          @include text-preset-1;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .results {
+    &-wrapper {
+      border-bottom-left-radius: 80px;
+    }
+  }
+}
