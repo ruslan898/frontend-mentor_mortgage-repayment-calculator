@@ -6,4 +6,9 @@
   @include text-preset-4;
   text-decoration: none;
   border-bottom: 1px solid $slate-700;
+  transition: 0.2s all;
+
+  &:hover {
+    color: $slate-900;
+  }
 }

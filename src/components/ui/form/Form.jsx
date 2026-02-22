@@ -36,7 +36,7 @@ export default function Form() {
           <Input type="number" name="rate" label="Interest Rate" suffix="%" />
         </InputBlock>
         <InputBlock label="Mortgage Type" className="full-width">
-          <Input type="radio" name="type" value="repayment" label="Repayment" />
+          <Input type="radio" name="type" value="repayment" label="Repayment" defaultChecked />
           <Input
             type="radio"
             name="type"
