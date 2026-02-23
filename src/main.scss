@@ -38,6 +38,10 @@ body {
   font-family: 'Plus Jakarta Sans', sans-serif;
   color: $slate-900;
   background-color: $slate-100;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .container {
   max-width: 100%;
