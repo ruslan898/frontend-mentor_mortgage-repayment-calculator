@@ -1,3 +1,5 @@
+import { NumericFormat } from 'react-number-format';
+
 import Title from '../title/Title';
 import Link from '../link/Link';
 import InputBlock from '../inputBlock/InputBlock';
@@ -8,7 +10,13 @@ import './form.scss';
 
 import calculatorIcon from '/src/assets/images/icon-calculator.svg';
 
-export default function Form({values, errors, onInputChange, onFormSubmit, onClear}) {
+export default function Form({
+  values,
+  errors,
+  onInputChange,
+  onFormSubmit,
+  onClear,
+}) {
   return (
     <form action="#" className="form" onSubmit={onFormSubmit}>
       <header className="header">
@@ -17,38 +25,50 @@ export default function Form({values, errors, onInputChange, onFormSubmit, onCle
       </header>
       <div className="input-section">
         <InputBlock label="Mortgage Amount" className="full-width">
-          <Input
-            type="number"
+          <NumericFormat
+            customInput={Input}
+            value={values.amount}
+            onValueChange={(values) => onInputChange('amount', values.value)}
+            thousandSeparator=","
+            decimalSeparator="."
+            allowNegative={false}
+            decimalScale={2}
             name="amount"
             label="Mortgage Amount"
-            prefix="£"
-            value={values.amount}
-            onChange={onInputChange}
+            prefixValue="£"
             error={errors.amount}
           />
           {errors.amount && <p className="error-message">{errors.amount}</p>}
         </InputBlock>
         <InputBlock label="Mortgage Term">
-          <Input
-            type="number"
+          <NumericFormat
+            customInput={Input}
+            value={values.term}
+            onValueChange={(values) => onInputChange('term', values.value)}
+            thousandSeparator=","
+            decimalSeparator="."
+            allowNegative={false}
+            decimalScale={2}
             name="term"
             label="Mortgage Term"
-            suffix="years"
-            value={values.term}
-            onChange={onInputChange}
+            suffixValue="years"
             error={errors.term}
           />
           {errors.term && <p className="error-message">{errors.term}</p>}
         </InputBlock>
 
         <InputBlock label="Interest Rate">
-          <Input
-            type="number"
+          <NumericFormat
+            customInput={Input}
+            value={values.rate}
+            onValueChange={(values) => onInputChange('rate', values.value)}
+            thousandSeparator=","
+            decimalSeparator="."
+            allowNegative={false}
+            decimalScale={2}
             name="rate"
             label="Interest Rate"
-            suffix="%"
-            value={values.rate}
-            onChange={onInputChange}
+            suffixValue="%"
             error={errors.rate}
           />
           {errors.rate && <p className="error-message">{errors.rate}</p>}
@@ -60,7 +80,9 @@ export default function Form({values, errors, onInputChange, onFormSubmit, onCle
             name="type"
             value="repayment"
             label="Repayment"
-            onChange={onInputChange}
+            onChange={({ target: { name, value } }) =>
+              onInputChange(name, value)
+            }
             checked={values.type === 'repayment'}
           />
           <Input
@@ -68,7 +90,9 @@ export default function Form({values, errors, onInputChange, onFormSubmit, onCle
             name="type"
             value="interest"
             label="Interest Only"
-            onChange={onInputChange}
+            onChange={({ target: { name, value } }) =>
+              onInputChange(name, value)
+            }
             checked={values.type === 'interest'}
           />
         </InputBlock>

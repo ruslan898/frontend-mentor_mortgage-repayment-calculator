@@ -10,8 +10,8 @@ export default function Input({
   name = 'input name',
   label = 'label text',
   className,
-  prefix,
-  suffix,
+  prefixValue,
+  suffixValue,
   error,
   ...props
 }) {
@@ -23,8 +23,14 @@ export default function Input({
   if (type === 'radio' || type === 'checkbox') {
     return (
       <div className="input-wrapper">
-        <label className='label-radio'>
-          <input type={type} name={name} id={id} className={inputClasses} {...props} />
+        <label className="label-radio">
+          <input
+            type={type}
+            name={name}
+            id={id}
+            className={inputClasses}
+            {...props}
+          />
           {label}
         </label>
       </div>
@@ -33,9 +39,15 @@ export default function Input({
 
   return (
     <div className={wrapperClasses}>
-      {prefix && <div className="prefix">{prefix}</div>}
-      <input type={type} name={name} id={id} className={inputClasses} {...props} />
-      {suffix && <span className="suffix">{suffix}</span>}
+      {prefixValue && <div className="prefix">{prefixValue}</div>}
+      <input
+        type={type}
+        name={name}
+        id={id}
+        className={inputClasses}
+        {...props}
+      />
+      {suffixValue && <span className="suffix">{suffixValue}</span>}
     </div>
   );
 }

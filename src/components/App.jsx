@@ -15,11 +15,8 @@ export default function App() {
   const [errors, setErrors] = useState({});
   const [results, setResults] = useState(null);
 
-  function handleInputChange(e) {
-    const inputName = e.target.name;
-    const inputValue = e.target.value;
-
-    setValues({ ...values, [inputName]: inputValue });
+  function handleInputChange(name, value) {
+    setValues({ ...values, [name]: value });
   }
 
   function validate() {
