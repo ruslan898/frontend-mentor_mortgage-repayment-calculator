@@ -20,7 +20,7 @@ export default function Form({
   return (
     <form action="#" className="form" onSubmit={onFormSubmit}>
       <header className="header">
-        <Title>Mortgage Calculator</Title>
+        <Title type="h1">Mortgage Calculator</Title>
         <Link onClick={onClear}>Clear all</Link>
       </header>
       <div className="input-section">
@@ -90,6 +90,7 @@ export default function Form({
             name="type"
             value="interest"
             label="Interest Only"
+            id="interest"
             onChange={({ target: { name, value } }) =>
               onInputChange(name, value)
           }

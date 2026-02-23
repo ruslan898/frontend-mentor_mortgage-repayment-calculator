@@ -6,7 +6,7 @@ export default function Link({ children, className, ...props }) {
   const classes = clsx('link', className);
 
   return (
-    <a href="#" className={classes} {...props} aria-label="Clear form">
+    <a className={classes} {...props} aria-label="Clear form">
       {children}
     </a>
   );

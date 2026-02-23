@@ -17,7 +17,7 @@ export default function Results({ results }) {
 
   return (
     <div className="results">
-      <div className="results-wrapper" aria-live='polite'>
+      <div className="results-wrapper" aria-live="polite">
         {results ? (
           <>
             <Title Title type="h2" className="results-title">
@@ -41,7 +41,7 @@ export default function Results({ results }) {
                 <div className="divider"></div>
                 <div className="results-values-item">
                   <Title type="h3" className="results-values-title">
-                    Total you'll repay over the term
+                    Total you&apos;ll repay over the term
                   </Title>
                   <p className="results-values-value">
                     {formatResult(results.total)}
