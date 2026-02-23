@@ -35,7 +35,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [GitHub](https://github.com/ruslan898/frontend-mentor_mortgage-repayment-calculator)
-- Live Site URL: [Netlify](https://graceful-peony-8ae98d.netlify.app/)
+- Live Site URL: [GitHub Pages](https://ruslan898.github.io/frontend-mentor_mortgage-repayment-calculator/)
 
 ## My process
 
