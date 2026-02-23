@@ -16,7 +16,6 @@ This is a solution to the [Mortgage repayment calculator challenge on Frontend M
   - [AI Collaboration](#ai-collaboration)
 - [Author](#author)
 
-
 ## Overview
 
 ### The challenge
@@ -54,44 +53,50 @@ Users should be able to:
 While working on this project, I learned how to implement basic custom form validation in React
 
 ```js
-  // Validation state values
-  const [values, setValues] = useState({
-    amount: '',
-    term: '',
-    rate: '',
-    type: 'repayment',
-  });
-  const [errors, setErrors] = useState({});
+// Validation state values
+const [values, setValues] = useState({
+  amount: '',
+  term: '',
+  rate: '',
+  type: '',
+});
+const [errors, setErrors] = useState({});
 
-  // Validation function
-  function validate() {
+// Validation function
+function validate() {
+  const { amount, term, rate, type } = values;
   const newErrors = {};
 
-  if (!values.amount) {
+  if (!amount) {
     newErrors.amount = 'This field is required';
-  } else if (+values.amount <= 0 || +values.amount > 100_000_000) {
+  } else if (+amount <= 0 || +amount > 100_000_000) {
     newErrors.amount = 'Invalid value';
   }
 
-  if (!values.term) {
+  if (!term) {
     newErrors.term = 'This field is required';
-  } else if (+values.term <= 0 || +values.term > 40) {
+  } else if (+term <= 0 || +term > 40) {
     newErrors.term = 'Invalid value';
   }
 
-  if (!values.rate) {
+  if (!rate) {
     newErrors.rate = 'This field is required';
-  } else if (+values.rate < 0 || +values.rate > 100) {
+  } else if (+rate < 0 || +rate > 100) {
     newErrors.rate = 'Invalid value';
+  }
+
+  if (!type) {
+    newErrors.type = 'This field is required';
   }
 
   return newErrors;
 }
 ```
+
 ### Useful resources
 
 - [react-number-format
-](https://www.npmjs.com/package/react-number-format) - This npm package helped me with correct formatting and displaying input values
+  ](https://www.npmjs.com/package/react-number-format) - This npm package helped me with correct formatting and displaying input values
 
 ### AI Collaboration
 
@@ -101,4 +106,3 @@ I've used ChatGPT to correctly style some elements and configure react-number-fo
 
 - GitHub - [ruslan898](https://github.com/ruslan898)
 - Frontend Mentor - [@ruslan898](https://www.frontendmentor.io/profile/ruslan898)
-

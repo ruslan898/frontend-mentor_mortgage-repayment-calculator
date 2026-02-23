@@ -10,7 +10,7 @@ export default function App() {
     amount: '',
     term: '',
     rate: '',
-    type: 'repayment',
+    type: '',
   });
   const [errors, setErrors] = useState({});
   const [results, setResults] = useState(null);
@@ -20,24 +20,29 @@ export default function App() {
   }
 
   function validate() {
+    const { amount, term, rate, type } = values;
     const newErrors = {};
 
-    if (!values.amount) {
+    if (!amount) {
       newErrors.amount = 'This field is required';
-    } else if (+values.amount <= 0 || +values.amount > 100_000_000) {
+    } else if (+amount <= 0 || +amount > 100_000_000) {
       newErrors.amount = 'Invalid value';
     }
 
-    if (!values.term) {
+    if (!term) {
       newErrors.term = 'This field is required';
-    } else if (+values.term <= 0 || +values.term > 40) {
+    } else if (+term <= 0 || +term > 40) {
       newErrors.term = 'Invalid value';
     }
 
-    if (!values.rate) {
+    if (!rate) {
       newErrors.rate = 'This field is required';
-    } else if (+values.rate < 0 || +values.rate > 100) {
+    } else if (+rate < 0 || +rate > 100) {
       newErrors.rate = 'Invalid value';
+    }
+
+    if (!type) {
+      newErrors.type = 'This field is required';
     }
 
     return newErrors;
@@ -62,7 +67,7 @@ export default function App() {
       amount: '',
       term: '',
       rate: '',
-      type: 'repayment',
+      type: '',
     });
 
     setResults(null);

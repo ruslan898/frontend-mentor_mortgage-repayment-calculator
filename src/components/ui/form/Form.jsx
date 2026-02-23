@@ -82,8 +82,8 @@ export default function Form({
             label="Repayment"
             onChange={({ target: { name, value } }) =>
               onInputChange(name, value)
-            }
-            checked={values.type === 'repayment'}
+          }
+          checked={values.type === 'repayment'}
           />
           <Input
             type="radio"
@@ -92,10 +92,11 @@ export default function Form({
             label="Interest Only"
             onChange={({ target: { name, value } }) =>
               onInputChange(name, value)
-            }
-            checked={values.type === 'interest'}
+          }
+          checked={values.type === 'interest'}
           />
         </InputBlock>
+          {errors.type && <p className="error-message">{errors.type}</p>}
       </div>
       <Button type="submit">
         <img src={calculatorIcon} alt="Calculator icon" />

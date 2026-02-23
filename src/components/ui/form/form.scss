@@ -33,6 +33,12 @@
     padding: 40px;
     gap: 40px;
 
+    header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
     .input-section {
       grid-template-columns: 1fr 1fr;
     }
