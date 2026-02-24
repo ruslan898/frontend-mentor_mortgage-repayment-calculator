@@ -7,7 +7,6 @@
   border: none;
   flex: 1;
   @include text-preset-3;
-  outline: none;
 
   &-wrapper {
     &.error {

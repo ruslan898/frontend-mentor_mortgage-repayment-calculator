@@ -20,7 +20,7 @@ export default function Results({ results }) {
       <div className="results-wrapper" aria-live="polite">
         {results ? (
           <>
-            <Title Title type="h2" className="results-title">
+            <Title type="h2" className="results-title">
               Your results
             </Title>
             <p className="results-text">

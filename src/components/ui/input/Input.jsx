@@ -27,7 +27,6 @@ export default function Input({
           <input
             type={type}
             name={name}
-            id={id}
             className={inputClasses}
             {...props}
           />

@@ -37,6 +37,8 @@ export default function Form({
             label="Mortgage Amount"
             prefixValue="£"
             error={errors.amount}
+            minLength={1}
+            maxLength={100_000_000}
           />
           {errors.amount && <p className="error-message">{errors.amount}</p>}
         </InputBlock>
@@ -53,6 +55,8 @@ export default function Form({
             label="Mortgage Term"
             suffixValue="years"
             error={errors.term}
+            minLength={1}
+            maxLength={40}
           />
           {errors.term && <p className="error-message">{errors.term}</p>}
         </InputBlock>
@@ -70,6 +74,8 @@ export default function Form({
             label="Interest Rate"
             suffixValue="%"
             error={errors.rate}
+            minLength={0}
+            maxLength={100}
           />
           {errors.rate && <p className="error-message">{errors.rate}</p>}
         </InputBlock>
