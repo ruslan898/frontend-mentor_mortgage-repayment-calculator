@@ -74,16 +74,18 @@ export default function Form({
           {errors.rate && <p className="error-message">{errors.rate}</p>}
         </InputBlock>
 
-        <InputBlock label="Mortgage Type" className="full-width">
+        <fieldset className="input-block full-width radio-fieldset">
+          <legend>Mortgage Type</legend>
           <Input
             type="radio"
             name="type"
             value="repayment"
             label="Repayment"
+            id="repayment"
             onChange={({ target: { name, value } }) =>
               onInputChange(name, value)
-          }
-          checked={values.type === 'repayment'}
+            }
+            checked={values.type === 'repayment'}
           />
           <Input
             type="radio"
@@ -93,11 +95,36 @@ export default function Form({
             id="interest"
             onChange={({ target: { name, value } }) =>
               onInputChange(name, value)
-          }
-          checked={values.type === 'interest'}
+            }
+            checked={values.type === 'interest'}
           />
-        </InputBlock>
-          {errors.type && <p className="error-message">{errors.type}</p>}
+        </fieldset>
+
+        {/* <InputBlock label="Mortgage Type" className="full-width">
+          <Input
+            type="radio"
+            name="type"
+            value="repayment"
+            label="Repayment"
+            onChange={({ target: { name, value } }) =>
+              onInputChange(name, value)
+            }
+            checked={values.type === 'repayment'}
+          />
+          <Input
+            type="radio"
+            name="type"
+            value="interest"
+            label="Interest Only"
+            id="interest"
+            onChange={({ target: { name, value } }) =>
+              onInputChange(name, value)
+            }
+            checked={values.type === 'interest'}
+          />
+        </InputBlock> */}
+
+        {errors.type && <p className="error-message">{errors.type}</p>}
       </div>
       <Button type="submit">
         <img src={calculatorIcon} alt="Calculator icon" />

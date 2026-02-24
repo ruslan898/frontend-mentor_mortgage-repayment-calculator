@@ -36,6 +36,15 @@
   }
 }
 
+.radio-fieldset {
+  border: none;
+  padding: 0;
+
+  legend {
+    margin-bottom: 12px;
+  }
+}
+
 @media (min-width: 768px) {
   .input {
     &-block {

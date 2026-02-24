@@ -2,9 +2,10 @@
 @use '/src/sass/mixins.scss' as *;
 
 .link {
+  background-color: transparent;
   color: $slate-700;
   @include text-preset-4;
-  text-decoration: none;
+  border: none;
   border-bottom: 1px solid $slate-700;
   transition: 0.2s all;
   cursor: pointer;
